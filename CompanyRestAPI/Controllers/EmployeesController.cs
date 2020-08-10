@@ -1,4 +1,5 @@
-﻿using CompanyRestAPI.Models;
+﻿using CompanyRestAPI.App_Start;
+using CompanyRestAPI.Models;
 using System;
 using System.Net;
 using System.Net.Http;
@@ -18,6 +19,7 @@ namespace CompanyRestAPI.Controllers
         // GET: Employees
         [Route("api/employees/getemployees")]
         [HttpGet]
+        //[BasicAuthentication]
         public HttpResponseMessage GetEmployees()
         {
             try

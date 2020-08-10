@@ -1,5 +1,5 @@
-﻿using Newtonsoft.Json.Serialization;
-using System.Net.Http.Headers;
+﻿using CompanyRestAPI.App_Start;
+using Newtonsoft.Json.Serialization;
 using System.Web.Http;
 
 namespace CompanyRestAPI
@@ -23,6 +23,8 @@ namespace CompanyRestAPI
             config.Formatters.JsonFormatter.SerializerSettings.Formatting = Newtonsoft.Json.Formatting.Indented;
 
             config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+
+            config.Filters.Add(new BasicAuthenticationAttribute());
         }
     }
 }
